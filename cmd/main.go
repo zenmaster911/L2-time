@@ -1,15 +1,15 @@
-package L2time
+package main
 
 import (
 	"fmt"
 	"os"
-	"time"
 
 	"github.com/beevik/ntp"
 )
 
+// ntp0.ntp-servers.net
 func main() {
-	resp, err := ntp.Query("ntp0.ntp-servers.net")
+	resp, err := ntp.Query("ntp.msk-ix.ru")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "ntp querry error: %v\n", err)
 		os.Exit(1)
@@ -19,6 +19,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(time.Now().Add(resp.ClockOffset))
+	fmt.Println(resp.Time.Local().Format("2006-01-02 15:04:05"))
 
 }

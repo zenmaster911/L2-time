@@ -1,4 +1,4 @@
-module github.com/zenmaster911/L2
+module github.com/zenmaster911/L2-time
 
 go 1.25.1
 
