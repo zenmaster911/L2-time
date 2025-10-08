@@ -7,7 +7,6 @@ import (
 	"github.com/beevik/ntp"
 )
 
-// ntp0.ntp-servers.net
 func main() {
 	resp, err := ntp.Query("ntp.msk-ix.ru")
 	if err != nil {
